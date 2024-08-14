@@ -67,7 +67,7 @@ class Joingame extends Command {
 			}
 		}
 
-		if (gameData.playerOrder.length + 1 > 8) {
+		if (gameData.playerOrder.length + 1 > 16) {
 			return msg.error(await translate("game.joingame.error.exceedingMax", language));
 		}
 

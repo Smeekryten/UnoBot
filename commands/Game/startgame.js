@@ -182,7 +182,7 @@ class Startgame extends Command {
 				);
 			}
 
-			if (playerList.length > 4) {
+			if (playerList.length > 16) {
 				if (!(await hasVoted(msg.author.id))) {
 					return msg.error(
 						await translate("game.startgame.error.4playerCap", language, { voteURL: topggVoteURL })
@@ -190,7 +190,7 @@ class Startgame extends Command {
 				}
 			}
 
-			if (playerList.length > 8) {
+			if (playerList.length > 16) {
 				return msg.error(await translate("game.startgame.error.playerCap", language));
 			}
 
@@ -428,7 +428,7 @@ class Startgame extends Command {
 							return reject();
 						}
 
-						if (playerList.length > 4) {
+						if (playerList.length > 16) {
 							if (!(await hasVoted(msg.author.id))) {
 								startgameEmbed.setDescription(
 									`:warning: ${await translate("game.startgame.warning.firstFour", language, {
@@ -440,11 +440,11 @@ class Startgame extends Command {
 							}
 						}
 
-						if (playerList.length > 8) {
+						if (playerList.length > 16) {
 							startgameEmbed.setDescription(
 								`:warning: ${await translate("game.startgame.warning.firstEight", language)}`
 							);
-							playerList = playerList.slice(0, 8);
+							playerList = playerList.slice(0, 16);
 						}
 
 						if (gameSettings.UseOneChannel) {
