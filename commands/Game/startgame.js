@@ -206,7 +206,7 @@ class Startgame extends Command {
 		} else {
 			async function setupGameEmbed() {
 				return new Promise(async (resolve, reject) => {
-					var timer = 30;
+					var timer = 180;
 					var playerListDisplayNames = [];
 
 					playerList.forEach((p) => playerListDisplayNames.push(p.displayName));
